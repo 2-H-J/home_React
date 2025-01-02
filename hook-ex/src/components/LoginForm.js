@@ -16,8 +16,12 @@ export default () => {
     return (
         <div>
             <h2>useEffect 테스트</h2>
-            <p><input type="text" onChange={(e) => setId(e.target.value)}/></p>
-            <p><input type="password" onChange={(e) => setPassword(e.target.value)} /></p>
+            <p>
+                <input type="text" onChange={(e) => setId(e.target.value)}/>
+            </p>
+            <p>
+                <input type="password" onChange={(e) => setPassword(e.target.value)} />
+            </p>
         </div>
     );
 }
