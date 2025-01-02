@@ -24,38 +24,37 @@ export default function MemoEx() {
         setList([...list, Number(input.current.value)]);
     };
 
-    // getAverage 함수는 배열의 평균을 계산합니다.
-    // - 매개변수 arr은 숫자의 배열입니다.
+    // getAverage 함수는 배열의 평균을 계산
+    // - 매개변수 arr은 숫자의 배열
     const getAverage = (arr) => {
-        console.log('평균 계산 중...'); // 평균 계산 중임을 로그로 출력합니다.
+        console.log('평균 계산 중...');
 
-        // 배열이 비어 있다면 평균은 0을 반환합니다.
+        // 배열이 비어 있다면 평균은 0을 반환
         if (arr.length === 0) return 0;
 
-        // 배열의 모든 숫자를 더한 뒤 요소의 개수로 나누어 평균을 계산합니다.
+        // 배열의 모든 숫자를 더한 뒤 요소의 개수로 나누어 평균을 계산
         return arr.reduce((pre, cur) => pre + cur, 0) / arr.length;
     };
 
-    // getAverageMemo는 useMemo를 사용하여 getAverage 함수의 결과를 캐싱합니다.
-    // - list 상태가 변경될 때만 getAverage 함수가 호출됩니다.
-    // - 이렇게 하면 불필요한 재계산을 방지하여 성능을 최적화할 수 있습니다.
+    // getAverageMemo는 useMemo를 사용하여 getAverage 함수의 결과를 캐싱
+    // - list 상태가 변경될 때만 getAverage 함수가 호출
+    // - 이렇게 하면 불필요한 재계산을 방지하여 성능을 최적화
     const getAverageMemo = useMemo(() => getAverage(list), [list]);
 
-    // temp라는 상태를 생성합니다.
+    // temp라는 상태를 생성
     // - temp는 숫자이며, 초기값은 0입니다.
-    // - setTemp는 temp 상태를 업데이트하는 함수입니다.
-    // - 이 상태는 평균 계산과는 무관하며, 리렌더링 테스트를 위해 추가되었습니다.
+    // - setTemp는 temp 상태를 업데이트하는 함수
+    // - 이 상태는 평균 계산과는 무관하며, 리렌더링 테스트를 위해 추가
     const [temp, setTemp] = useState(0);
 
-    // JSX를 반환하여 UI를 렌더링합니다.
+    // JSX를 반환하여 UI를 렌더링
     return (
         <>
-            {/* 컴포넌트의 제목을 표시합니다. */}
             <h2>useMemo 테스트</h2>
 
             {/* 
-            list 배열의 요소들을 문자열로 연결하여 출력합니다.
-            getAverageMemo 값을 통해 평균을 표시합니다.
+            list 배열의 요소들을 문자열로 연결하여 출력
+            getAverageMemo 값을 통해 평균을 표시
             */}
             <p>{list.join(', ')} / 평균 : {getAverageMemo}</p>
 

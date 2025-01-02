@@ -4,7 +4,7 @@ import {useRef, useState} from 'react';
 //값을 유지하거나 또는 DOM 요소를 참조
 //DOM 참조 => ref 속성값으로 추가해서 해당변수로 참조해서 사용
 
-export default () => {
+const RefEx = () => {
     const inputRef = useRef(null);
     const btnClick = () => {
         //버튼을 클릭했을때, input 태그에 포커스가 이동하게끔 처리
@@ -24,3 +24,5 @@ export default () => {
 
     );
 }
+
+export default RefEx;
