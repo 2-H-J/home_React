@@ -1,23 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import EffectEx from './components/EffectEx';
+import LoginForm from './components/LoginForm';
+import RefEx from './components/RefEx';
+import MemoEx from './components/MemoEx';
 
+// 자동완성이 안뜬다면 export가 안된 경우가 있다.
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <EffectEx/>
+      <hr/>
+      <LoginForm/>
+      <hr/>
+      <RefEx/>
+      <hr/>
+      <MemoEx/>
     </div>
   );
 }
