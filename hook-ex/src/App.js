@@ -6,6 +6,7 @@ import RefEx from './components/RefEx';
 import MemoEx from './components/MemoEx';
 import Callback from './components/Callback';
 import ContextComponent from './components/ContextComponent';
+import CounterReducer from './components/CounterReducer';
 
 // 자동완성이 안뜬다면 export가 안된 경우가 있다.
 function App() {
@@ -22,6 +23,8 @@ function App() {
       <Callback/>
       <hr/>
       <ContextComponent/>
+      <hr/>
+      <CounterReducer/>
     </div>
   );
 }
