@@ -1,6 +1,6 @@
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
-import { useCallback, useReducer } from "react";
+import { useCallback, useEffect, useReducer } from "react";
 const makeTodo = () => {
     const todo = [];
     for (let i = 1; i <= 5; i++) {
@@ -28,8 +28,20 @@ function reducer(state, action) {
     // return state;
 }
 
+function loadTodo() {
+    const todo = localStorage.getItem('todo');
+    if (todo) {
+        return JSON.parse(todo);
+    }
+    return {list: makeTodo(), id: 6};
+}
+
 export default function TodoTemplate() {
-    const [todoList, dispatch] = useReducer(reducer,{list:makeTodo(),id:6});
+    const [todoList, dispatch] = useReducer(reducer, loadTodo());
+
+    useEffect(() => {
+        localStorage.setItem('todo', JSON.stringify(todoList));
+    }, [todoList]);
     
     const deleteTodo = useCallback((id) => {
         dispatch({type: 'DELETE', payload: id});
