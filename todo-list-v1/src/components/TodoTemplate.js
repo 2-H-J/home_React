@@ -1,6 +1,6 @@
 // React에서 useCallback과 useState 훅을 가져옵니다.
 // useState는 상태 관리를 위해, useCallback은 메모이제이션된 함수를 생성하기 위해 사용됩니다.
-import { useCallback, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 
 // TodoList 컴포넌트를 가져옵니다.
 // TodoList는 todo 항목들을 렌더링하기 위한 하위 컴포넌트입니다.
@@ -73,9 +73,15 @@ function TodoTemplate() {
     }, []); // 의존성 배열이 빈 배열이므로, 이 함수도 처음 렌더링 시에만 생성됩니다.
 
     // 항목 추가하는 함수--------------------------------------------------------
+    let id = useRef(6);
     const addTodo = useCallback((text) => {
+        // todoList에 항목 추가
         setTodoList((todos) => {
-            return [...todos, { id: todos.length + 1, text, done: false }];
+            // 1번째 방법
+            // return [...todos, { id: todos.length + 1, text, done: false }];
+
+            // 2번째 방법 - 이방법으로 할 경우 index.js에서 랜더링이 여러번 되기 때문에 <React.StrictMode></React.StrictMode>를 제거해야 한다.
+            return [...todos, {id : id.current++, text, done: false }];
         });
     }, []);
 
