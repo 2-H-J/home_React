@@ -34,18 +34,26 @@ function App() {
   //문자열 비교
   let str1 = 'hello';
   const str2 = 'hello';
+  let num1 = 2;
+  const num2 = '2';
+
   console.log(str1 == str2); // true
   console.log(str1 === str2); // true
+  console.log(num1 == num2); // true
+  console.log(num1 === num2); // false
+
   console.log(Object.is(str1, str2)); // true
+  console.log(Object.is(num1,num2)) // false
   
   console.log("---------객체 비교----------");
   // 객체 비교 - Reference Type
   let obj1 = {name : '홍길동'};
   let obj2 = {name : '홍길동'};
+
   // 객체는 주소가 달라져서 false
   console.log(obj1 == obj2); // false
   console.log(obj1 === obj2); // false
-  console.log(Object.is(obj1,obj2)); // Object.is : 타입까지 비교 - false
+  console.log(Object.is(obj1,obj2)); // false
 
   obj2 = obj1; // obj2에 obj1 객체로 적용
   console.log(obj1 == obj2); // true
