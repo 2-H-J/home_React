@@ -1,6 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import {sum, minus} from './func/math'; // js는 .js를 안붙이고 파일명만 가져오면 된다
+
+// 다른 js파일 import하기
+// js는 .js를 안붙이고 파일명만 가져오면 된다
+// { }를 사용하여 함수를 가져올때는 땐 함수명을 그대로 가져와야 한다.
+import {sum, minus} from './func/math'; 
+
+// export default로 가져올때는 다른 이름으로 불러올 수 있다.
 import default_Test from './func/default';
 
 function App() {
@@ -9,8 +15,8 @@ function App() {
   console.log("--------0 비교---------");
   // == : 값을 비교 - true , 값만 같으면 true이다.
   // === : 값과 값의 종류(Data Type)가 모두 같은지를 비교
-  console.log(-0 == +0); // -true
-  console.log(-0 === +0); // -true
+  console.log(-0 == +0); // true
+  console.log(-0 === +0); // true
 
   console.log("--------Object.is 비교---------");
   // Object.is : 객체를 비교
@@ -66,6 +72,7 @@ function App() {
   console.log(minus(10,20));
 
   console.log("-----improt시 default적용-----");
+  
   default_Test('default_Test : hello world');
 
   return (
