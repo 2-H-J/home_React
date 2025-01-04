@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import NoJSX from './components/NoJSX';
 import ComponentEx from './components/ComponentEx';
