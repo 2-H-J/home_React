@@ -60,12 +60,12 @@ function App() {
   console.log(obj1 === obj2); // true
   console.log(Object.is(obj1,obj2)); // true
 
-  console.log("----------improt로 다른 js파일 함수 가져오기---------")
+  console.log("----------improt로 다른 js파일 함수 가져오기---------");
   // import로 js를 가져오려면 위에 import {sum, minus} from './func/math'; 선언했음
   console.log(sum(10,20));
   console.log(minus(10,20));
 
-  console.log("-----improt시 default적용-----")
+  console.log("-----improt시 default적용-----");
   default_Test('default_Test : hello world');
 
   return (
