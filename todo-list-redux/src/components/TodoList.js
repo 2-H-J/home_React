@@ -1,7 +1,9 @@
 import TodoListItem from "./TodoListItem";
+import { useSelector } from "react-redux";
 
-export default function TodoList({todoList, deleteTodo, updateTodo}) {
-    console.log(todoList)
+export default function TodoList() {
+    const todo = useSelector(state => state.todo);
+
     return (
         <div>
             <table className="table">
@@ -15,8 +17,8 @@ export default function TodoList({todoList, deleteTodo, updateTodo}) {
                 </thead>
                 <tbody>
                     {
-                        todoList.map(todo => {
-                            return <TodoListItem key={todo.id} todo={todo} deleteTodo={deleteTodo} updateTodo={updateTodo} />
+                        todo.todoList.map(todo => {
+                            return <TodoListItem key={todo.id} todo={todo}  />
                         })
                     }
                     
