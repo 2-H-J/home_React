@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
-import { addTodo } from "../store/TodoSlice";
+import { addTodo } from "../store/TodoSlice"; // 항상 에러 버그인듯?
 
 export default function TodoForm() {
   const txt = useRef(null);
