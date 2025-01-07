@@ -4,6 +4,7 @@ import Header from './components/Header';
 import HomePage from './page/HomePage';
 import AboutPage from './page/AboutPage';
 import NotFoundPage from './page/NotFoundPage';
+import PostDetailPage from './page/PostDetailPage';
 
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
         <Route path="/about" element={<AboutPage/>}></Route>
         {/* 없는 경로, 잘못된 경로로 접근했을 때 */}
         <Route path="*" element={<NotFoundPage/>}></Route>
+        {/* 게시글 상세 페이지 지정 - /post/:postId : 내가 보낸 데이터의 파라미터값, postId PostDetailPage의 변수명이랑 같아야 한다 */}
+        <Route path="/post/:postId" element={<PostDetailPage/>}></Route>
       </Routes>
     </BrowserRouter>
   );
