@@ -2,8 +2,8 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import MemberItem from '../components/MemberItem';
 export default function Home() {
-    //axios 이용해서 전체 회원 데이터 읽어오는 코드 작성
-    //   /member/list  <--- Get
+    // axios 이용해서 전체 회원 데이터 읽어오는 코드 작성
+    // 경로는 /member/list, 가지고 오는 것은 Get으로가지고 오기 / 추가, 첨부등등 Post 으로
     const [memberList, setMemberList] = useState([]);
     // const [memberList, setMemberList] 상태 변수로 그냥 가져오면 무한 호출한다
     // 그래서 useEffect 적용해서 최초의 데이터는 한번만 가져오게 설정
