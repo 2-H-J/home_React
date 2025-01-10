@@ -1,0 +1,20 @@
+nav{
+    width: 1200px;
+    margin: 0 auto;
+  }
+  
+  nav > ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+  }
+  
+  nav > ul > li > a:link, nav > ul > li > a:visited {
+    text-decoration: none;
+    color: #000;
+  }
+  
+  nav > ul > li > a:hover, nav > ul > li > a:active {
+    text-decoration: underline;
+  }

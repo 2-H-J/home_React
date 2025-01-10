@@ -6,7 +6,7 @@ export default function OpenWeatherEx() {
     const getWeather = () => {
         // axios 사용해서 openweather 날씨 정보 가져오기
         const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?'; // api url
-        const appid = 'API_KEY'; // api key
+        const appid = process.env.REACT_APP_OPEN_WEATHER_API_KEY; // api key
         const lat = '37.555899'; // 위도
         const lon = '126.972328'; // 경도
 

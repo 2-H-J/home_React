@@ -24,8 +24,8 @@ function App() {
         <Route path="/about" element={<AboutPage/>}>
 
         {/* Route안 차원 경로 - 하위 Route는 /를 제외 */}
-          <Route path='team' element={<TeamPage/>}></Route>
-          <Route path='company' element={<CompanyPage/>}></Route>
+        <Route path='team' element={<TeamPage/>}></Route>
+        <Route path='company' element={<CompanyPage/>}></Route>
           
         </Route>
 
