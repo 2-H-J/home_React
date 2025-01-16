@@ -1,0 +1,26 @@
+*{
+    margin:0;
+    padding:0;
+  }
+  body{
+    height:3000px;
+  }
+  table{
+    border-collapse: collapse;
+    margin: 20px auto;
+    width: 1200px;
+  }
+  td, th{
+    padding:10px;
+    border: 1px solid black;
+    text-align: center;
+  }
+  .board_footer{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap:0px 10px;
+  }
+  .board_footer a{
+    cursor: pointer;
+  } 

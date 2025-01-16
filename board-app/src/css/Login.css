@@ -1,0 +1,50 @@
+/* 화면 전체 높이를 사용하여, 가운데 정렬해줍니다 */
+.login-container {
+  display: flex;             /* flex 컨테이너 사용 */
+  flex-direction: column;    /* 세로 정렬 */
+  justify-content: top;   /* 수직 가운데 정렬 */
+  align-items: center;       /* 수평 가운데 정렬 */
+  min-height: 100vh;         /* 화면 전체 높이 */
+  background-color: #f4f4f4; /* 배경색 예시 */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  padding-top: 100px;
+}
+
+/* 제목, 문단, 폼 모두 가운데 정렬 */
+.login-container h2,
+.login-container p,
+.login-container form {
+  text-align: center;
+}
+
+/* 폼 내부 스타일 */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+/* 인풋 스타일 */
+.login-form input {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+/* 버튼 스타일 */
+.login-form button {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #4263eb; /* 예시: 파란색 */
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+}
+
+.login-form button:hover {
+  background-color: #274cda; /* 호버 시 살짝 진한 색상 */
+}
