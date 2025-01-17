@@ -1,6 +1,5 @@
 #board_view_container {
-  width: 100%;
-  max-width: 1200px;
+  width: 90%;
   margin: 20px auto;
   background: #fff;
   padding: 20px;
@@ -276,3 +275,4 @@
 .btn_comment_update_cancel:hover {
   background: #c0392b;
 }
+

@@ -1,50 +1,88 @@
-/* 화면 전체 높이를 사용하여, 가운데 정렬해줍니다 */
+/* 화면 전체 높이를 사용하여, 가운데 정렬 및 디자인 개선 */
 .login-container {
-  display: flex;             /* flex 컨테이너 사용 */
-  flex-direction: column;    /* 세로 정렬 */
-  justify-content: top;   /* 수직 가운데 정렬 */
-  align-items: center;       /* 수평 가운데 정렬 */
-  min-height: 100vh;         /* 화면 전체 높이 */
-  background-color: #f4f4f4; /* 배경색 예시 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #4A90E2, #50E3C2); /* 배경에 그라데이션 추가 */
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  padding-top: 100px;
+  padding: 20px;
+  margin: 0 auto; /* 중앙 정렬 */
+  width: 90%; /* header와 동일한 너비 */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
 }
 
-/* 제목, 문단, 폼 모두 가운데 정렬 */
-.login-container h2,
-.login-container p,
-.login-container form {
-  text-align: center;
+/* 제목과 설명 스타일 */
+.login-container h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.login-container p {
+  font-size: 1rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
 }
 
 /* 폼 내부 스타일 */
 .login-form {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 100%;
+  max-width: 400px; /* 최대 너비 설정 */
+  background: #ffffff; /* 배경 흰색 */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* 인풋 스타일 */
+/* 인풋 필드 스타일 */
 .login-form input {
   margin: 0.5rem 0;
-  padding: 0.5rem;
+  padding: 10px;
   font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* 인풋 포커스 스타일 */
+.login-form input:focus {
+  outline: none;
+  border-color: #4A90E2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
 }
 
 /* 버튼 스타일 */
 .login-form button {
-  margin-top: 0.5rem;
-  padding: 0.5rem;
+  margin-top: 1rem;
+  padding: 10px;
   font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
-  background-color: #4263eb; /* 예시: 파란색 */
   color: #ffffff;
+  background: #4A90E2;
   border: none;
   border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
 .login-form button:hover {
-  background-color: #274cda; /* 호버 시 살짝 진한 색상 */
+  background: #357ABD;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .login-container {
+    width: 95%; /* 작은 화면에서 너비를 줄임 */
+    padding: 20px; /* 여백 조정 */
+  }
+  .login-form {
+    width: 100%; /* 폼 너비 조정 */
+    max-width: none;
+  }
 }

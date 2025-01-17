@@ -191,9 +191,11 @@ export default function BoardView() {
           <td>{board.bcount}</td>
         </tr>
         <tr>
-          <td colSpan="2"> 
+          <td colSpan="2">
+            <div className="content-area">
             {/* html 적용하여 출력 */}
             <div dangerouslySetInnerHTML={{__html: board.content}}></div>
+            </div>
           </td>
         </tr>
         <tr>
@@ -206,9 +208,8 @@ export default function BoardView() {
             }
           </td>
         </tr>
-        
         <tr>
-             <td colSpan="2">
+          <td colSpan="2">
                  
         {
           user.token == null ? <div className="comment_form">
@@ -218,23 +219,24 @@ export default function BoardView() {
                         <button type="button" onClick={commentWrite} >댓글작성</button>
                 </div>
         }
-             </td>
-         </tr>
-     <tr>
-       <td colSpan="2">
-        <h3>첨부파일 목록</h3>
-        <ul>
-         {
-          file.map((item, idx) => <li key={idx}>
-            <a href={`http://localhost:9999/board/download/${item.fno}`}>
-              {item.fpath.split('\\').pop()}
-            </a></li>)
-         }
-        </ul>
-        </td>
-     </tr>
+          </td>
+        </tr>
+        <tr>
+          <td colSpan="2">
+            <h3>첨부파일 목록</h3>
+            <ul>
+              {file.map((item, idx) => 
+              <li key={idx}>
+                <a href={`http://localhost:9999/board/download/${item.fno}`}>
+                  {item.fpath.split('\\').pop()}
+                </a>
+              </li>)
+              }
+            </ul>
+          </td>
+        </tr>
      </tbody>
-      </table>
+    </table>
       <hr/>
       <div className="comment_container">
         { commentList.length == 0 ? <p>댓글이 없습니다.</p> : 
@@ -262,7 +264,7 @@ export default function BoardView() {
 
         }
 			</div>
-        )};
+        )}
       </div>
       <button type="button" id="btn_more" onClick={moreComment}>댓글 더보기</button>            
     </div>
