@@ -1,26 +1,112 @@
-*{
-  margin:0;
-  padding:0;
+/* 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-  height:3000px;
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: #f5f5f5;
+  color: #333;
 }
-table{
+
+/* 테이블 스타일 */
+table {
   border-collapse: collapse;
   margin: 20px auto;
-  width: 1200px;
+  width: 90%; /* 화면 크기에 맞게 조정 */
+  background: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
 }
-td, th{
-  padding:10px;
-  border: 1px solid black;
-  text-align: center;
+
+/* 테이블 헤더 스타일 */
+thead {
+  background: #4A90E2;
+  color: #fff;
 }
-.board_footer{
+
+th {
+  padding: 15px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* 테이블 본문 스타일 */
+tbody tr {
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease;
+}
+
+tbody tr:hover {
+  background-color: #f0f8ff;
+}
+
+td {
+  padding: 10px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+td a {
+  text-decoration: none;
+  color: #4A90E2;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+td a:hover {
+  color: #00376b;
+  text-decoration: underline;
+}
+
+/* 페이징 버튼 스타일 */
+.board_footer {
   display: flex;
-  flex-flow: row nowrap;
+  flex-wrap: wrap;
   justify-content: center;
-  gap:0px 10px;
+  gap: 10px;
+  padding: 20px 0;
+  background: #fff;
+  border-top: 1px solid #ddd;
 }
-.board_footer a{
+
+.board_footer a {
   cursor: pointer;
-} 
+  padding: 8px 12px;
+  border: 1px solid #4A90E2;
+  border-radius: 4px;
+  color: #4A90E2;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.board_footer a:hover {
+  background: #4A90E2;
+  color: #fff;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  table {
+    width: 100%; /* 모바일 화면에서는 테이블이 꽉 차도록 */
+  }
+
+  th, td {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+
+  .board_footer {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .board_footer a {
+    width: 100px;
+    text-align: center;
+  }
+}
