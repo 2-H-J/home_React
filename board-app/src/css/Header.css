@@ -1,12 +1,12 @@
-/* 전체 레이아웃 중앙 정렬 및 반응형 */
+/* Header.css */
 header {
-  width: 90%; /* Home 테이블과 동일한 너비 */
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 90%; /* 화면 크기의 90% */
+  margin: 0 auto; /* 가운데 정렬 */
   padding: 10px 20px;
   background: linear-gradient(135deg, #4A90E2, #50E3C2);
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  box-sizing: border-box; /* padding 포함 */
 }
 
 /* 네비게이션 스타일 */
@@ -42,8 +42,7 @@ nav a {
   transition: all 0.3s ease;
 }
 
-nav a:link,
-nav a:visited {
+nav a:link, nav a:visited {
   color: #fff;
 }
 
@@ -75,7 +74,6 @@ nav div {
 
   nav a {
     font-size: 0.9rem;
-    min-width: auto;
     text-align: center;
   }
 }
