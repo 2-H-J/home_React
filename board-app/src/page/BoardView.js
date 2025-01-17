@@ -33,6 +33,7 @@ export default function BoardView() {
   }, []);
   const decodeToken = user.token ? jwtDecode(user.token) : '';
 
+  // 댓글 더보기
   const moreComment = () => {
     apiAxios.get(`/board/comment/${bno}`,
       {
@@ -43,6 +44,9 @@ export default function BoardView() {
         setCommentList([...commentList, ...res.data]);
       }).catch(err => console.log(err));
   }
+
+  // 댓글 좋아요 처리 함수
+  
 
   // 게시글 출력
   // 첨부파일 목록 출력
