@@ -34,9 +34,9 @@ export default function BoardWrite() {
         const content = editor.current.getInstance().getMarkdown();
         // JSON과 파일목록을 폼데이터로 변환
         const fromData = new FormData();
-        FormData.append('params', JSON.stringify({ title, content }));
+        fromData.append('params', JSON.stringify({ title, content }));
         fileList.forEach((item) => {
-            fromData.append('files', item);
+            fromData.append('file', item);
         });
         //전송
         apiAxios.post('/board/write', fromData, {
@@ -46,10 +46,15 @@ export default function BoardWrite() {
             }
         }).then(res => {
             console.log(res);
-            navigate('/board/' + res.data.bno);
+            if (res.data.code == 1){
+                navigate('/board/' + res.data.bno);
+            }else{
+                alert(res.data.msg);
+                navigate('/login');
+            }
         }).catch(err => {
             console.log(err);
-            alert('게시판 글스기 실패');
+            alert('게시판 글쓰기 실패');
         });
     }
 
