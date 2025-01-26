@@ -10,7 +10,18 @@ import apiAxios from "../lib/apiAxios";
 export default function BoardView() {
   const [data, setData] = useState({});
   const [commentList, setCommentList] = useState([]);
-  const [board, setBoard] = useState({});
+  // const [board, setBoard] = useState({});
+  const [board, setBoard] = useState({
+    bno: null,
+    title: null,
+    nickName: null,
+    bcount: null,
+    content: null,
+    blike: null,
+    bhate: null,
+    id: null,
+  });
+  
   const [file, setFileList] = useState([]);
   const user = useSelector(state => state.member.value);
   const bno = useParams().bno;
@@ -172,6 +183,7 @@ export default function BoardView() {
 
   return (
     <div id="board_view_container">
+      
       <table>
         <tbody>
         <tr>
@@ -194,7 +206,9 @@ export default function BoardView() {
           <td colSpan="2">
             <div className="content-area">
             {/* html 적용하여 출력 */}
-            <div dangerouslySetInnerHTML={{__html: board.content}}></div>
+            {/* dangerouslySetInnerHTML는 보안 이슈가 발생할 수 있으므로, 반드시 백엔드에서 데이터를 신뢰할 수 있는 경우에만 사용 */}
+            {/* 또한, 기본적으로 데이터가 비어있을 경우 빈 문자열로 대체 */}
+            <div dangerouslySetInnerHTML={{ __html: board.content || '' }}></div>
             </div>
           </td>
         </tr>
@@ -230,8 +244,8 @@ export default function BoardView() {
                 <a href={`http://localhost:9999/board/download/${item.fno}`}>
                   {item.fpath.split('\\').pop()}
                 </a>
-              </li>)
-              }
+              </li>
+              )}
             </ul>
           </td>
         </tr>

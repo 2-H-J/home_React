@@ -25,7 +25,7 @@ export default function Header() {
               <Link to="/">홈</Link>
             </li>
             <li>
-              { user.token ? <Link to="/">글쓰기</Link> : <></> }
+              { user.token ? <Link to="/board/write">글쓰기</Link> : <></> }
             </li>
             <li>
               {user.token ? <a href="" onClick={logout}>로그아웃</a> : <Link to="/login">로그인</Link> }
