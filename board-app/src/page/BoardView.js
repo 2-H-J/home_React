@@ -275,7 +275,6 @@ export default function BoardView() {
             <button className="btn_comment_update_submit" type="button" onClick={(e) => {commentUpdate(comment.cno, e.target.previousElementSibling.value, e);}}>수정하기</button>
             <button className="btn_comment_update_cancel" type="button" onClick={offUpdateCommentForm}>수정 취소</button>
           </p>
-
         }
 			</div>
         )}
