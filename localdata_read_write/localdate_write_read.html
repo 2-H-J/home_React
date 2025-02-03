@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>local storage</title>
+    <script src="local.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <h2>로컬 데이터 저장</h2>
+    <input type="text" id="key" placeholder="키값"><input type="text" id="text_save" placeholder="값"><button type="button" id="btn_save">저장</button>
+    <div class="container">
+        <!-- 키값 데이터 출력하는 테이블 thead, tbody 넣기-->
+        <table>
+            <thead>
+                <tr>
+                    <th>키값</th>
+                    <th>데이터</th>
+                    <th>비고</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" class="key" placeholder="키값"></td>
+                    <td><input type="text" class="data" placeholder="저장값"></td>
+                    <td><input type="button" class="btn_remove" value="삭제"></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3"><input type="button" id="btn_all_delete" value="전체 삭제하기"></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    
+</body>
+</html>
