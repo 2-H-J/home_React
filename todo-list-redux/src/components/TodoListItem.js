@@ -1,6 +1,6 @@
 import '../css/todo.css';
 import { useDispatch } from 'react-redux';
-import { deleteTodo, updateTodo } from '../store/TodoSlice';
+import { deleteTodo, updateTodo } from '../store/todoSlice';
 export default function TodoListItem({ todo }) {
     const dispatch = useDispatch();
     return (
